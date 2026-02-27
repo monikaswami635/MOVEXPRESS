@@ -1,5 +1,6 @@
 import React from 'react';
 import { customersectioncards } from './common/Helper';
+import { buttonclasses } from './common/Heading';
 
 function Card({ Icon, title, description }) {
   return (
@@ -45,15 +46,7 @@ function Customersection() {
         ))}
       </div>
 
-      <div className="grid justify-center items-center mt-12">
-        <button className="relative overflow-hidden bg-common text-white font-semibold px-11 py-5 rounded-xl group">
-          {/* Center Fill Layer */}
-          <span className="absolute inset-0 bg-primary scale-0 group-hover:scale-100 transition-transform duration-500 ease-in-out origin-center rounded-xl"></span>
-
-          {/* Button Text */}
-          <span className="relative z-10">Get a Quote</span>
-        </button>
-      </div>
+      {buttonclasses}
     </section>
   );
 }

@@ -18,10 +18,12 @@ function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <img src={footerlogo} alt="footer-logo" className="h-14 w-14" />
-            <div>
-              <h2 className="text-2xl font-bold primary">MOVEXPRESS</h2>
-              <p className="text-sm primary-color">Expressly Delivered</p>
-            </div>
+            <Link to="/" onClick={() => setIsOpen(false)}>
+              <div>
+                <h2 className="text-2xl font-bold primary">MOVEXPRESS</h2>
+                <p className="text-sm primary-color">Expressly Delivered</p>
+              </div>
+            </Link>
           </div>
 
           <p className="text-gray-700 mt-6 text-[16px] leading-7">
@@ -52,19 +54,7 @@ function Footer() {
               { name: 'Blogs', path: '/blogs' },
             ].map((item, index) => (
               <li key={index}>
-                <Link
-                  to={item.path}
-                  className="relative inline-block
-                  after:content-['']
-                  after:absolute
-                  after:left-0
-                  after:-bottom-1
-                  after:h-0.5
-                  after:w-0
-                  after:bg-primary
-                  after:transition-all
-                  after:duration-300
-                  hover:after:w-full">
+                <Link to={item.path} className="footer-style">
                   {item.name}
                 </Link>
               </li>
@@ -87,19 +77,7 @@ function Footer() {
               'How Pay Works',
             ].map((item, index) => (
               <li key={index}>
-                <Link
-                  to="/"
-                  className="relative inline-block
-                  after:content-['']
-                  after:absolute
-                  after:left-0
-                  after:-bottom-1
-                  after:h-0.5
-                  after:w-0
-                  after:bg-primary
-                  after:transition-all
-                  after:duration-300
-                  hover:after:w-full">
+                <Link to="/" className="footer-style">
                   {item}
                 </Link>
               </li>
@@ -108,28 +86,16 @@ function Footer() {
         </div>
 
         {/* ===== Column 4 - Contact ===== */}
-        <div>
-          <h3 className="text-xl font-semibold text-primary mb-5">
+        <div className="flex flex-col">
+          <h3 className="text-xl font-semibold text-primary mb-5 ">
             Contact Info
           </h3>
 
-          <p className="text-gray-800 font-medium leading-7">
+          <p className=" footer-address">
             6566 Union Street, San Francisco CA 65456, United States
           </p>
 
-          <a
-            href="tel:+15551234567"
-            className=" mt-4 font-semibold text-lg relative inline-block
-            after:content-['']
-            after:absolute
-            after:left-0
-            after:-bottom-1
-            after:h-0.5
-            after:w-0
-            after:bg-[#4B014B]
-            after:transition-all
-            after:duration-300
-            hover:after:w-full">
+          <a href="tel:+15551234567" className="footer-tel hover:after:w-36">
             (555) 123-4567
           </a>
 

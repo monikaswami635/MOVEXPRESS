@@ -1,82 +1,93 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../assets/images/express-logo.webp';
 import rightlogo from '../assets/images/logo-right.webp';
 import { Link } from 'react-router-dom';
-// import { BgGradient } from './common/Icon';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Lock body scroll only when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
+
   return (
-    <>
-      <nav className="flex justify-between sm:justify-between items-center w-full  px-5 sm:px-20 py-2 bg-primary text-white flex-wrap ">
-        {/* <BgGradient className="absolute top-0 right-0 -z-10" /> */}
-        <Link to="/" onClick={() => setIsOpen(false)}>
-          <div className="flex items-center justify-center gap-2">
-            <img
-              src={logo}
-              alt="express-logo"
-              className="sm:h-14 sm:w-20 w-12"
-            />
-            <span className="flex flex-col">
-              <i className="text-xl sm:text-4xl font-bold">MOVEXPRESS</i>
-              <i className="text-sm">Expressly Delivered</i>
-            </span>
-          </div>
-        </Link>
+    <nav className="flex justify-between items-center w-full px-5 sm:px-20 py-2 bg-primary text-white">
+      {/* Logo */}
+      <Link to="/" onClick={() => setIsOpen(false)}>
+        <div className="flex items-center gap-2">
+          <img src={logo} alt="express-logo" className="sm:h-14 sm:w-20 w-12" />
+          <span className="flex flex-col">
+            <i className="text-xl sm:text-4xl font-bold">MOVEXPRESS</i>
+            <i className="text-sm">Expressly Delivered</i>
+          </span>
+        </div>
+      </Link>
 
-        {/* Menu Button  */}
-        <button onClick={() => setIsOpen(true)} className="p-3 cursor-pointer">
-          <img src={rightlogo} alt="rightlogo" />
-        </button>
+      {/* Menu Button */}
+      <button onClick={() => setIsOpen(true)} className="p-3 cursor-pointer">
+        <img src={rightlogo} alt="menu-icon" />
+      </button>
 
-        {/* Curtain Menu  */}
-        <div
-          className={`fixed top-0 left-0 w-full h-full bg-[#F6C8F6] 
+      {/* Curtain Menu */}
+      <div
+        className={`fixed top-0 left-0 w-full h-full bg-[#F6C8F6]
+        overflow-y-auto overflow-x-hidden hide-scrollbar
         font-semibold text-primary
         transform transition-transform duration-500 z-50
         ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute top-8 right-10 md:right-22 text-2xl px-2 lg:text-3xl h-14 w-14 rounded-2xl primary bg-primary text-white ">
-            ✖
-          </button>
+        {/* Close Button */}
+        <button
+          onClick={() => setIsOpen(false)}
+          className="absolute top-8 right-10 md:right-28 text-2xl h-14 w-14 rounded-2xl bg-primary text-white">
+          ✖
+        </button>
 
-          {/* Menu Content */}
-          <ul class="flex flex-col items-center justify-center h-full space-y-8 text-2xl ">
-            <Link
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className="nav-style w-43">
+        {/* Menu Content */}
+        <ul className="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+          <li>
+            <Link to="/" onClick={() => setIsOpen(false)} className="nav-style">
               Home
             </Link>
+          </li>
+
+          <li>
             <Link
               to="/aboutus"
               onClick={() => setIsOpen(false)}
-              className="nav-style w-43">
+              className="nav-style">
               About
             </Link>
+          </li>
+
+          <li>
             <Link
               to="/services"
               onClick={() => setIsOpen(false)}
-              className="nav-style w-53">
+              className="nav-style">
               Services
             </Link>
+          </li>
+
+          <li>
             <Link
               to="/blogs"
               onClick={() => setIsOpen(false)}
-              className="nav-style w-38">
+              className="nav-style">
               Blogs
             </Link>
-            {/* <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className="text-6xl hover:text-[#FA881E] font-medium">
-              Contact
-            </Link> */}
-          </ul>
-        </div>
-      </nav>
-    </>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 }
 

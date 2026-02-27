@@ -17,6 +17,8 @@
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^7.13.0",
     "swiper": "^12.1.2",
+    "tailwind-scrollbar": "^4.0.2",
+    "tailwind-scrollbar-hide": "^4.0.0",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {

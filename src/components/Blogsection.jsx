@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 import { blogcards } from './common/Helper';
 
@@ -23,7 +22,7 @@ function Cards({ img, title, description, button, Icon }) {
               {description}
             </p>
           </article>
-          <button className="flex justify-center items-center text-xl  font-semibold text-primary mt-2">
+          <button className="flex justify-center items-center text-xl font-semibold text-primary mt-2">
             {button}
             <Icon />
           </button>

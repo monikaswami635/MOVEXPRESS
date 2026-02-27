@@ -26,7 +26,7 @@ function Faqsection() {
         {faqData.map((item) => (
           <div
             key={item.id}
-            className="mt-3 px-10 py-4 rounded-2xl mx-auto w-87.5 sm:w-162.5 border border-[#0000001F] transition-all duration-500 cursor-pointer hover:bg-white">
+            className="mt-3 px-4   sm:px-10 py-4 rounded-2xl mx-auto w-87.5 sm:w-162.5 border border-[#0000001F] transition-all duration-500 cursor-pointer hover:bg-white">
             {/* Header */}
             <div
               onClick={() => toggle(item.id)}

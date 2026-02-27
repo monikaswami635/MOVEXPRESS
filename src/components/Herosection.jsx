@@ -42,16 +42,15 @@ function Hersection() {
   };
   return (
     <>
-      <div className="h-[0.3px]  bg-[#F0EAEA] "></div>
+      <div className=" h-[0.3px]  bg-[#F0EAEA] "></div>
       <section className="flex flex-col lg:flex-row justify-between mx-auto lg:mx-0 lg:px-20 items-center bg-primary relative overflow-hidden  lg:gap-5  text-white">
         <BgGradient />
 
         {/* Left Content  */}
-        <div className="sm:mt-10 mt-4 text-center lg:text-left">
-          <h1 className="card-style">Move Smart.</h1>
-          <h1 className="card-style">Move Easy.</h1>
-          <h1 className="card-style">MoveXpress</h1>
-
+        <div className="sm:mt-10 mt-6 text-center lg:text-left">
+          <span className="card-style">Move Smart.</span> <br />
+          <span className="card-style">Move Easy.</span> <br />
+          <span className="card-style">MoveXpress</span>
           <p className="text-lg sm:text-xl max-w-107.5 mt-6 mx-auto lg:mx-0">
             Book reliable, stress-free removals across London today.
           </p>
@@ -151,9 +150,8 @@ function Hersection() {
               </form>
             </div>
           </div>
-
           {/* Icon Row  */}
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-5 items-center pt-12 mx-auto lg:mx-0">
+          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-5 items-center mt-10 mx-auto lg:mx-0">
             <article className="flex items-center gap-3">
               <span className="h-7 w-7">
                 {/* Icon 1  */}
@@ -174,9 +172,8 @@ function Hersection() {
               </span>
             </article>
           </div>
-
           {/* Hero Card  */}
-          <div className="h-52 w-84 md:w-79.5 ml-6 bg-[#FA881E] mt-16 rounded-tl-lg rounded-tr-lg">
+          <div className="h-52 w-84 md:w-79.5 ml-6 bg-[#FA881E] -bottom-16 relative rounded-tl-lg rounded-tr-lg">
             <article className="flex flex-col items-center gap-2 py-5">
               <span className="flex justify-center items-center">
                 <Onestar />

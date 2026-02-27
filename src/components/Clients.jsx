@@ -7,7 +7,6 @@ function Cards({ img, name, title, Icon, description }) {
       <div className="flex flex-col justify-center items-center max-w-96 sm:h-96  w-96 gap-1 bg-[#4B014B0A] px-6 py-5 sm:py-3 rounded-xl">
         <article className="flex justify-center gap-6 items-center sm:flex-col">
           <span>
-            {' '}
             <img
               src={img}
               alt="person1"
@@ -21,7 +20,7 @@ function Cards({ img, name, title, Icon, description }) {
           </span>
         </article>
         <p className="text-center max-w-96 mt-4">
-          <i className="text-xl font-normal">{description}</i>
+          <i className="sm:text-xl font-normal">{description}</i>
         </p>
       </div>
     </>
@@ -59,7 +58,7 @@ function Clients() {
           <p className="text-[#3B3B3B] font-semibold text-xl">
             Have you moved with us?
           </p>
-          <button className="relative overflow-hidden bg-common text-white font-semibold px-11 py-5 rounded-xl group">
+          <button className="relative overflow-hidden bg-common text-white font-semibold px-7 sm:px-11 sm:py-5 py-4 rounded-xl group">
             <span className="absolute inset-0 bg-primary scale-0 group-hover:scale-100 transition-transform duration-500 ease-in-out origin-center rounded-xl"></span>
             <span className="relative z-10">Leave a Review</span>
           </button>
