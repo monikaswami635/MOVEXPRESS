@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/images/express-logo.webp';
 import rightlogo from '../assets/images/logo-right.webp';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   // Lock body scroll only when menu is open
   useEffect(() => {
@@ -53,11 +54,17 @@ function Navbar() {
 
         {/* Menu Content */}
         <ul className="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
-          <li>
-            <Link to="/" onClick={() => setIsOpen(false)} className="nav-style">
-              Home
-            </Link>
-          </li>
+          <NavLink
+            to="/"
+            end
+            onClick={() => setIsOpen(false)}
+            className={({ isActive }) =>
+              `nav-style ${
+                isActive ? 'text-indigo-600 font-bold' : 'text-gray-700'
+              }`
+            }>
+            Home
+          </NavLink>
 
           <li>
             <Link
