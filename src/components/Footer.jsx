@@ -1,6 +1,7 @@
 import React from 'react';
 import footerlogo from '../assets/images/express-logo.webp';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import {
   Messageicon,
   Facebookicon,
@@ -18,7 +19,9 @@ function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <img src={footerlogo} alt="footer-logo" className="h-14 w-14" />
-            <Link to="/" onClick={() => setIsOpen(false)}>
+            <Link
+              to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <div>
                 <h2 className="text-2xl font-bold primary">MOVEXPRESS</h2>
                 <p className="text-sm primary-color">Expressly Delivered</p>
@@ -54,9 +57,15 @@ function Footer() {
               { name: 'Blogs', path: '/blogs' },
             ].map((item, index) => (
               <li key={index}>
-                <Link to={item.path} className="footer-style">
+                <HashLink
+                  smooth
+                  to={item.path}
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }
+                  className="footer-style">
                   {item.name}
-                </Link>
+                </HashLink>
               </li>
             ))}
           </ul>
@@ -77,9 +86,9 @@ function Footer() {
               'How Pay Works',
             ].map((item, index) => (
               <li key={index}>
-                <Link to="/" className="footer-style">
+                <HashLink to="/" className="footer-style">
                   {item}
-                </Link>
+                </HashLink>
               </li>
             ))}
           </ul>

@@ -9,7 +9,7 @@ function Professional() {
       <div className="py-7">
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={10}
+          spaceBetween={9}
           speed={1800}
           breakpoints={{
             768: { slidesPerView: 2 },
@@ -38,6 +38,9 @@ function Professional() {
           </SwiperSlide>
           <SwiperSlide className="text-center font-semibold ">
             Stress-Free Experience
+          </SwiperSlide>
+          <SwiperSlide className="text-center font-semibold">
+            On-Time Delivery
           </SwiperSlide>
         </Swiper>
       </div>

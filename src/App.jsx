@@ -9,6 +9,7 @@ import Contactpage from './pages/Contactpage';
 import Servicedetailpage from './pages/Servicedetailpage';
 import Servicespage from './pages/Servicespage';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/Scrollontop';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/contact" element={<Contactpage />} />
       </Routes>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

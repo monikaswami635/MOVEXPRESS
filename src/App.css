@@ -76,21 +76,26 @@ body {
             after:duration-300
             hover:after:w-40;
 }
-/* @layer utilities {
-  .scrollbar-custom::-webkit-scrollbar {
-    width: 8px;
-  }
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px;
+}
 
-  .scrollbar-custom::-webkit-scrollbar-thumb {
-    @apply bg-primary rounded-lg;
-  }
+::-webkit-scrollbar-track {
+  background: #d0bdd0; /* Track color */
+}
 
-  .scrollbar-custom::-webkit-scrollbar-track {
-    background-color: #f3f4f6;
-  }
+::-webkit-scrollbar-thumb {
+  background: #4b014b; /* Scrollbar color */
+  border-radius: 4px;
+}
 
-  .scrollbar-custom {
-    scrollbar-width: thin;
-    scrollbar-color: #6366f1 #f3f4f6;
-  }
-} */
+::-webkit-scrollbar-thumb:hover {
+  background: #a506a5;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4b014b #d0bdd0;
+}
